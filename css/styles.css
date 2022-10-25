@@ -6,3 +6,53 @@ charleston-green: #212729ff;
 sweet-brown: #A03933ff;
 pale-silver: #CDC4BAff; 
 */
+/*
+Fonts:
+font-family: 'Ropa Sans', sans-serif; 
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Ropa+Sans:ital@0;1&display=swap');
+
+body{
+    font-family: 'Ropa Sans', sans-serif;
+}
+
+.logo{
+    font-family: 'Ropa Sans', sans-serif;
+    font-style: italic;
+    font-size: 3rem;
+    font-weight: 1000;
+    color: #CDC4BAff;
+    padding: 0 40px;
+    margin: 0px;
+}
+
+.logoName{
+    font-family: 'Ropa Sane', sans-serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: #CDC4BAff;
+    padding-top: 0;
+    margin: 0px;
+}
+
+.brown-bg{
+    background-color: #A03933ff;
+}
+
+.navElements{
+    margin-top: 1%;
+    margin-right: 5%;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.light-gray{
+    color: #D2D6D9ff;
+}
+
+.no-top-margin{
+    margin-top: 0;
+    padding-top: 0;
+}
