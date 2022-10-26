@@ -21,14 +21,18 @@
 // }
 const newsSection = document.getElementById('newsSection')
 
-async function request(){
+window.onload = async function request(){
     const result = await fetch('https://newsapi.org/v2/everything?q=Biden&apiKey=863d0a6431664782b0f4495cb5da05cb')
     const response = await result.json();
-    console.log(response.articles[0])
-    let output = `
-    <img src='${response.articles[0].urlToImage}' width='1000px'></img>
-    <h2>${response.articles[0].title}</h2>
-    `
-    newsSection.innerHTML += output;
+    const result2 = response.articles
+    for(i = 0; i < result2.length; i++){
+        let output = `
+        <div class='align-middle text-center mt-5'>
+        <a href="${result2[i].url}" target="_blank" class="text-dark news-article"><img src='${result2[i].urlToImage}' width='1000px' class='border rounded-4 mb-3'></img>
+        <h2>${result2[i].title}</h2></a>
+        </div>
+        `
+        newsSection.innerHTML += output;
+    }
     return response.articles[0]
 }

@@ -12,7 +12,8 @@
     <script src="./script/app.js" defer></script>
 </head>
 <body>
-    <nav class="navbar bg-light fixed-top no-top-margin fixed-top">
+    <div id="top"></div>
+    <nav class="navbar bg-light fixed-top no-top-margin fixed-top brown-bg">
         <div class="container-fluid brown-bg">
           <a class="navbar-brand logo" href="#">Egil.news</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -53,8 +54,10 @@
           </div>
         </div>
       </nav>
-      <section id="newsSection">
-
+      <section id="newsSection" class="margin-topNews">
       </section>
+      <div class="position-fixed bottom-0 end-0"><a href="#top">
+        <img src="./img/arrow-up.svg" alt="" width="50px"></a>
+      </div>
 </body>
 </html>
