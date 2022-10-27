@@ -15,7 +15,7 @@
     <nav class="navbar bg-light fixed-top no-top-margin fixed-top brown-bg">
         <div class="container-fluid brown-bg">
           <a class="navbar-brand logo" href="" id="homeBTN">Egil.news</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <button class="navbar-toggler me-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="offcanvas offcanvas-end brown-bg" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -29,15 +29,21 @@
                   <a class="nav-link active fs-3" aria-current="page" href="">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link fs-3" href="" onclick="">News</a>
+                  <a class="nav-link fs-3" onclick="categories('ukraine')">Ukraine</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-3" onclick="categories('climate')">Climate</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-3" onclick="categories('prime minister')">Politics</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Categories
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="">World News</a></li>
-                    <li><a class="dropdown-item" href="">Crypto</a></li>
+                    <li><a class="dropdown-item" onclick='categories("World News")'>World News</a></li>
+                    <li><a class="dropdown-item" onclick="categories('crypto')">Crypto</a></li>
                     <li>
                       <hr class="dropdown-divider">
                     </li>
@@ -45,10 +51,10 @@
                   </ul>
                 </li>
               </ul>
-              <form class="d-flex mt-3" role="search" onsubmit="search()">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
-                <button class="btn btn-outline-light" type="submit" id="searchBTN">Search</button>
-              </form>
+              <div class="d-flex mt-3">
+                <input class="form-control me-2"placeholder="Search" id="searchInput">
+                <button class="btn btn-outline-light" id="searchBTN" onclick="search()">Search</button>
+              </div>
             </div>
           </div>
         </div>

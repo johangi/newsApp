@@ -15,6 +15,7 @@ font-family: 'Ropa Sans', sans-serif;
 
 body{
     font-family: 'Ropa Sans', sans-serif;
+    background-color: #CDC4BAff;
 }
 
 body::-webkit-scrollbar{
@@ -69,4 +70,12 @@ body::-webkit-scrollbar{
 .news-article{
     text-decoration: none;
     font-weight: 500 !important;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+.paddingRightLeft{
+    padding: 0 25%;
 }
