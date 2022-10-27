@@ -17,6 +17,10 @@ body{
     font-family: 'Ropa Sans', sans-serif;
 }
 
+body::-webkit-scrollbar{
+    display: none;
+}
+
 .logo{
     font-family: 'Ropa Sans', sans-serif;
     font-style: italic;

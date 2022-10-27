@@ -14,7 +14,7 @@
     <div id="top"></div>
     <nav class="navbar bg-light fixed-top no-top-margin fixed-top brown-bg">
         <div class="container-fluid brown-bg">
-          <a class="navbar-brand logo" href="#">Egil.news</a>
+          <a class="navbar-brand logo" href="" id="homeBTN">Egil.news</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -26,18 +26,18 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active fs-3" aria-current="page" href="#">Home</a>
+                  <a class="nav-link active fs-3" aria-current="page" href="">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link fs-3" href="#">News</a>
+                  <a class="nav-link fs-3" href="" onclick="">News</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Categories
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">World News</a></li>
-                    <li><a class="dropdown-item" href="#">Crypto</a></li>
+                    <li><a class="dropdown-item" href="">World News</a></li>
+                    <li><a class="dropdown-item" href="">Crypto</a></li>
                     <li>
                       <hr class="dropdown-divider">
                     </li>
@@ -45,14 +45,19 @@
                   </ul>
                 </li>
               </ul>
-              <form class="d-flex mt-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <form class="d-flex mt-3" role="search" onsubmit="search()">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
                 <button class="btn btn-outline-light" type="submit" id="searchBTN">Search</button>
               </form>
             </div>
           </div>
         </div>
       </nav>
+      <div class="position-absolute top-50 start-50 translate-middle">
+        <button class="align-middle justify-content-center text-center btn btn-outline-secondary btn-lg margin-topNews" id="loadNewsBtn" onclick="request()">
+          Load Personalized News
+        </button>
+      </div>
       <section id="newsSection" class="margin-topNews">
       </section>
       <div class="position-fixed bottom-0 end-0"><a href="#top">

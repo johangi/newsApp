@@ -1,17 +1,43 @@
-const newsSection = document.getElementById('newsSection')
+const newsSection = document.getElementById('newsSection');
+const searchBTN = document.getElementById('searchBTN');
+const searchInput = document.getElementById('searchInput');
+const egilNewsBTN = document.getElementById('homeBTN');
+const loadNewsBtn = document.getElementById('loadNewsBtn')
 
-window.onload = async function request(){
-    const result = await fetch('https://newsapi.org/v2/everything?q=Biden&apiKey=863d0a6431664782b0f4495cb5da05cb')
-    const response = await result.json();
-    const result2 = response.articles
+async function request(){
+    console.log('a');
+    const fetchReq = await fetch('https://newsapi.org/v2/everything?q="Gay porn"&apiKey=863d0a6431664782b0f4495cb5da05cb');
+    const response = await fetchReq.json();
+    const result = response.articles;
     for(i = 0; i < 25; i++){
         let output = `
         <div class='align-middle text-center mt-5'>
-        <a href="${result2[i].url}" target="_blank" class="text-dark news-article"><img src='${result2[i].urlToImage}' width='1000px' class='border rounded-4 mb-3'></img>
-        <h2>${result2[i].title}</h2></a>
+        <a href="${result[i].url}" target="_blank" class="text-dark news-article"><img src='${result[i].urlToImage}' width='70%' class='border rounded-4 mb-3'></img>
+        <h2 class="ps-5 pe-5">${result[i].title}</h2>
+        <h5>${result[i].source.name}</h5></a>
         </div>
-        `
+        `;
         newsSection.innerHTML += output;
-    }
-    return response.articles[0]
-}
+    };
+    loadNewsBtn.classList.add('d-none')
+};
+
+async function search(){
+    console.log('b');
+    let query = searchInput.value;
+    const fetchRequest = await fetch(`https://newsapi.org/v2/everything?q=${query}&apiKey=863d0a6431664782b0f4495cb5da05cb`);
+    const searchResponse = await fetchRequest.json();
+    const result = searchResponse.articles;
+    newsSection.innerHTML = ``;
+    for(i = 0; i < 25; i++){
+        let output = `
+        <div class='align-middle text-center mt-5 justify-content-center'>
+        <a href="${result[i].url}" target="_blank" class="text-dark news-article"><img src='${result[i].urlToImage}' width='70%' class='border rounded-4 mb-3'></img>
+        <h2 class="ps-5 pe-5">${result[i].title}</h2>
+        <h5>${result[i].source.name}</h5></a>
+        </div>
+        `;
+        newsSection.innerHTML += output;
+    };
+    loadNewsBtn.classList.add('d-none')
+};
