@@ -79,3 +79,9 @@ a:hover{
 .paddingRightLeft{
     padding: 0 25%;
 }
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}

@@ -5,7 +5,6 @@ const egilNewsBTN = document.getElementById('homeBTN');
 const loadNewsBtn = document.getElementById('loadNewsBtn')
 
 async function request(){
-    console.log('a');
     const fetchReq = await fetch('https://newsapi.org/v2/everything?q="Gay porn"&apiKey=863d0a6431664782b0f4495cb5da05cb');
     const response = await fetchReq.json();
     const result = response.articles;
@@ -28,13 +27,40 @@ async function search(){
     const searchResponse = await fetchRequest.json();
     const result = searchResponse.articles;
     newsSection.innerHTML = ``;
-    for(i = 0; i < 25; i++){
+    for(i = 0; i < 25; i = i+3){
         let output = `
-        <div class='align-middle text-center mt-5 justify-content-center'>
-        <a href="${result[i].url}" target="_blank" class="text-dark news-article"><img src='${result[i].urlToImage}' width='50%' class='border rounded-4 mb-3'></img>
-        <h2 class="paddingRightLeft">${result[i].title}</h2>
-        <h5>${result[i].source.name}</h5></a>
+    <div class="card-group" style="border-radius: 20%;">
+        <div class="card m-3">
+            <img src="${result[i].urlToImage}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">${result[i].title}</h5>
+            <p class="card-text">${result[i].description}</p>
+            </div>
+            <div class="card-footer">
+            <small class="text-muted">${result[i].source.name}</small>
+            </div>
         </div>
+        <div class="card m-3" style="border-radius: 20%;">
+            <img src="${result[i+1].urlToImage}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">${result[i+1].title}</h5>
+            <p class="card-text">${result[i+1].description}</p>
+            </div>
+            <div class="card-footer">
+            <small class="text-muted">${result[i+1].source.name}</small>
+            </div>
+        </div>
+        <div class="card m-3" style="border-radius: 20%;">
+            <img src="${result[i+2].urlToImage}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">${result[i+2].title}</h5>
+            <p class="card-text">${result[i+2].description}</p>
+            </div>
+            <div class="card-footer">
+            <small class="text-muted">${result[i+2].source.name}</small>
+            </div>
+        </div>
+    </div>
         `;
         newsSection.innerHTML += output;
     };
