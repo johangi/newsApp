@@ -6,7 +6,7 @@ const loadNewsBtn = document.getElementById('loadNewsBtn')
 
 async function categories(query){
     loadNewsBtn.classList.add('d-none')
-    const fetchReq = await fetch(`https://newsapi.org/v2/top-headlines?q="${query}"&apiKey=0ce5e7b82aeb4cdcbd6106237e4e4b3b`);
+    const fetchReq = await fetch(`https://newsapi.org/v2/top-headlines?q=${query}&apiKey=0ce5e7b82aeb4cdcbd6106237e4e4b3b`);
     const searchRes = await fetchReq.json();
     const result = searchRes.articles;
     newsSection.innerHTML = ``;
