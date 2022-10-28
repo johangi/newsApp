@@ -62,7 +62,7 @@ async function search(){
         <div class="card m-3">
             <img src="${result[i].urlToImage}" class="card-img-top" alt="...">
             <div class="card-body">
-            <h5 class="card-title">${result[i].title}</h5>
+            <h5 class="card-title"><a href="${result[i].url}" style="text-decoration: none; color: #6A7A8Eff;">${result[i].title}</a></h5>
             <p class="card-text">${result[i].description}</p>
             </div>
             <div class="card-footer">
@@ -72,7 +72,7 @@ async function search(){
         <div class="card m-3">
             <img src="${result[i+1].urlToImage}" class="card-img-top" alt="...">
             <div class="card-body">
-            <h5 class="card-title">${result[i+1].title}</h5>
+            <h5 class="card-title"><a href="${result[i+1].url}" style="text-decoration: none; color: #6A7A8Eff;">${result[i+1].title}</a></h5>
             <p class="card-text">${result[i+1].description}</p>
             </div>
             <div class="card-footer">
@@ -82,7 +82,7 @@ async function search(){
         <div class="card m-3">
             <img src="${result[i+2].urlToImage}" class="card-img-top" alt="...">
             <div class="card-body">
-            <h5 class="card-title">${result[i+2].title}</h5>
+            <h5 class="card-title"><a href="${result[i+2].url}" style="text-decoration: none; color: #6A7A8Eff;">${result[i+2].title}</a></h5>
             <p class="card-text">${result[i+2].description}</p>
             </div>
             <div class="card-footer">
